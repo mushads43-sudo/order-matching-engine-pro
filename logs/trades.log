@@ -1,0 +1,40 @@
+2026-03-18 18:52:11,558 - TRADE | Stock: AAPL | Price: 145.0 | Qty: 5 | BuyID: 1 | SellID: 2
+2026-03-18 18:52:11,558 - TRADE | Stock: AAPL | Price: 150.0 | Qty: 5 | BuyID: 1 | SellID: 3
+2026-03-18 18:52:11,558 - TRADE | Stock: GOOG | Price: 2695.0 | Qty: 3 | BuyID: 4 | SellID: 5
+2026-03-18 18:52:11,558 - TRADE | Stock: MSFT | Price: 299.0 | Qty: 3 | BuyID: 6 | SellID: 8
+2026-03-18 18:52:58,197 - TRADE | Stock: AAPL | Price: 145.0 | Qty: 5 | BuyID: 1 | SellID: 2
+2026-03-18 18:52:58,197 - TRADE | Stock: AAPL | Price: 150.0 | Qty: 5 | BuyID: 1 | SellID: 3
+2026-03-18 18:52:58,197 - TRADE | Stock: GOOG | Price: 2695.0 | Qty: 3 | BuyID: 4 | SellID: 5
+2026-03-18 18:52:58,197 - TRADE | Stock: MSFT | Price: 299.0 | Qty: 3 | BuyID: 6 | SellID: 8
+2026-03-18 18:55:23,069 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-18 18:55:23,069 - [33mPress CTRL+C to quit[0m
+2026-03-18 18:55:23,069 -  * Restarting with stat
+2026-03-18 18:55:23,195 -  * Debugger is active!
+2026-03-18 18:55:23,205 -  * Debugger PIN: 119-311-348
+2026-03-18 18:57:08,941 - TRADE | Stock: AAPL | Price: 145.0 | Qty: 5 | BuyID: 1 | SellID: 2
+2026-03-18 18:57:08,941 - TRADE | Stock: AAPL | Price: 150.0 | Qty: 5 | BuyID: 1 | SellID: 3
+2026-03-18 18:57:08,941 - TRADE | Stock: GOOG | Price: 2695.0 | Qty: 3 | BuyID: 4 | SellID: 5
+2026-03-18 18:57:08,941 - TRADE | Stock: MSFT | Price: 299.0 | Qty: 3 | BuyID: 6 | SellID: 8
+2026-03-18 18:57:42,694 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-18 18:57:42,695 - [33mPress CTRL+C to quit[0m
+2026-03-18 18:57:42,695 -  * Restarting with stat
+2026-03-18 18:57:42,819 -  * Debugger is active!
+2026-03-18 18:57:42,826 -  * Debugger PIN: 119-311-348
+2026-03-18 18:57:56,700 - 127.0.0.1 - - [18/Mar/2026 18:57:56] "GET / HTTP/1.1" 200 -
+2026-03-18 18:57:57,146 - 127.0.0.1 - - [18/Mar/2026 18:57:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-18 18:58:36,715 - 127.0.0.1 - - [18/Mar/2026 18:58:36] "[31m[1mGET /order HTTP/1.1[0m" 405 -
+2026-03-18 19:01:41,316 - 127.0.0.1 - - [18/Mar/2026 19:01:41] "GET / HTTP/1.1" 200 -
+2026-03-18 19:05:49,160 - 127.0.0.1 - - [18/Mar/2026 19:05:49] "POST /order HTTP/1.1" 200 -
+2026-03-18 19:09:14,542 - TRADE | Stock: AAPL | Price: 145.0 | Qty: 5 | BuyID: 1000 | SellID: 1001
+2026-03-18 19:09:14,543 - 127.0.0.1 - - [18/Mar/2026 19:09:14] "POST /order HTTP/1.1" 200 -
+2026-03-18 19:09:38,592 - 127.0.0.1 - - [18/Mar/2026 19:09:38] "POST /order HTTP/1.1" 200 -
+2026-03-18 19:10:08,153 - TRADE | Stock: AAPL | Price: 145.0 | Qty: 5 | BuyID: 1000 | SellID: 1003
+2026-03-18 19:10:08,154 - 127.0.0.1 - - [18/Mar/2026 19:10:08] "POST /order HTTP/1.1" 200 -
+2026-03-18 19:10:35,111 - 127.0.0.1 - - [18/Mar/2026 19:10:35] "GET /trades HTTP/1.1" 200 -
+2026-03-18 19:13:08,612 - 127.0.0.1 - - [18/Mar/2026 19:13:08] "GET / HTTP/1.1" 200 -
+2026-03-18 19:15:49,882 - TRADE | Stock: AAPL | Price: 145.0 | Qty: 5 | BuyID: 1 | SellID: 2
+2026-03-18 19:15:49,882 - TRADE | Stock: AAPL | Price: 150.0 | Qty: 5 | BuyID: 1 | SellID: 3
+2026-03-18 19:15:49,882 - TRADE | Stock: GOOG | Price: 2695.0 | Qty: 3 | BuyID: 4 | SellID: 5
+2026-03-18 19:15:49,882 - TRADE | Stock: MSFT | Price: 299.0 | Qty: 3 | BuyID: 6 | SellID: 8
