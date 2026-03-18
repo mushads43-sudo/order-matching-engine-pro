@@ -5,7 +5,7 @@ This project implements a **High-Frequency Trading (HFT) Order Matching Engine**
 
 It uses **price-time priority** to ensure fair and efficient execution, similar to production-grade trading systems used by financial institutions.
 
-The system demonstrates **low-latency matching, efficient data structures, and thread-safe execution**, making it highly relevant for software engineering roles in finance (e.g., JP Morgan).
+The system demonstrates **low-latency matching, efficient data structures, and thread-safe execution**.
 
 ---
 
