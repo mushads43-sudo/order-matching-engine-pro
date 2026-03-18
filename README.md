@@ -9,7 +9,7 @@ The system demonstrates **low-latency matching, efficient data structures, and t
 
 ---
 
-## 🎯 Key Highlights (Resume Value)
+## 🎯 Key Highlights
 - Built a **real-time order matching engine** using price-time priority
 - Implemented **heap-based order books** for efficient O(log n) operations
 - Designed a **thread-safe system** using locks for concurrent execution
