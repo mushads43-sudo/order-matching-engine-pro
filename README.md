@@ -1,248 +1,122 @@
-# 📈 Order Matching Engine (HFT Simulation)
+# Order Matching Engine (HFT Simulation)
 
-## 🧠 Overview
-This project implements a **High-Frequency Trading (HFT) Order Matching Engine**, simulating how real-world stock exchanges match buy and sell orders.
+## **Overview**
 
-It uses **price-time priority** to ensure fair and efficient execution, similar to production-grade trading systems used by financial institutions.
+This project implements a High-Frequency Trading (HFT) Order Matching Engine that simulates how real-world stock exchanges match buy and sell orders.
 
-The system demonstrates **low-latency matching, efficient data structures, and thread-safe execution**.
-
----
-
-## 🎯 Key Highlights
-- Built a **real-time order matching engine** using price-time priority
-- Implemented **heap-based order books** for efficient O(log n) operations
-- Designed a **thread-safe system** using locks for concurrent execution
-- Simulated **multi-stock trading environment**
-- Developed **REST API** for real-time order submission and trade retrieval
-- Enabled **bulk order processing via CSV using Pandas**
-- Implemented **trade logging system** for tracking and auditing
+It uses price-time priority to ensure fair and efficient execution, closely resembling production-grade trading systems used in financial markets. The system highlights low-latency processing, efficient data structures, and thread-safe execution.
 
 ---
 
-## ⚙️ System Architecture
+## **Problem Statement**
 
-Matching Engine  
-│  
-├── Order Book  
-│   ├── Buy Orders (Max Heap)  
-│   └── Sell Orders (Min Heap)  
-│  
-├── Matching Logic  
-├── Trade Execution  
-└── Logging System  
+Financial markets require extremely fast and reliable systems to match buy and sell orders in real time. Traditional implementations may struggle with scalability, latency, and concurrency.
+
+This project solves these challenges by:
+- Designing an efficient order matching mechanism using price-time priority  
+- Ensuring low-latency execution with optimized data structures  
+- Handling concurrent order submissions safely using thread synchronization  
+- Simulating real-world trading scenarios for multiple stocks  
 
 ---
 
-## 🏗️ How It Works
+## **Tech Stack**
 
-1. **Order Submission**
-   - Orders are submitted via REST API or CSV input
-   - Each order includes:
-     - Stock Symbol
-     - Side (BUY / SELL)
-     - Price
-     - Quantity
-     - Timestamp
-
-2. **Order Book Storage**
-   - Buy orders → stored in **Max Heap** (highest price first)
-   - Sell orders → stored in **Min Heap** (lowest price first)
-
-3. **Matching Logic**
-   - Matching condition:
-     ```
-     Buy Price ≥ Sell Price
-     ```
-   - Orders matched using:
-     - Best price priority
-     - FIFO (time priority) within same price
-
-4. **Trade Execution**
-   - Trade quantity = minimum of buy/sell quantities
-   - Partial fills supported
-   - Remaining orders pushed back into heap
-
-5. **Thread Safety**
-   - Uses `threading.Lock` to ensure safe concurrent operations
-
-6. **Trade Logging**
-   - All executed trades stored and retrievable via API
+- Programming: Python  
+- Data Structures: Heap (Priority Queue)  
+- Concurrency: Threading, Locks  
+- Data Processing: Pandas  
+- API Development: FastAPI / Flask  
+- Logging: Python Logging  
 
 ---
 
-## 🚀 Features
-- Multi-stock support (AAPL, GOOG, MSFT)
-- Price-Time Priority Matching
-- Thread-safe execution
-- Heap-based efficient order book
-- Partial order fills
-- CSV-based bulk order input (Pandas)
-- REST API support
-- Trade history tracking
+## **Approach**
+
+### **Data Collection and Input Handling**
+- Accepted orders via REST API and CSV files  
+- Each order includes stock symbol, side, price, quantity, and timestamp  
+- Used Pandas for bulk order processing  
 
 ---
 
-## 🧰 Tech Stack
-
-| Component        | Technology Used        |
-|----------------|----------------------|
-| Language        | Python               |
-| Data Structures | Heap (Priority Queue)|
-| Concurrency     | Threading + Locks    |
-| Data Handling   | Pandas               |
-| API             | FastAPI / Flask      |
-| Logging         | Python Logging       |
+### **Feature Engineering / System Design**
+- Designed separate order books for buy and sell sides  
+- Buy orders stored in Max Heap (highest price priority)  
+- Sell orders stored in Min Heap (lowest price priority)  
+- Maintained FIFO order within same price level  
 
 ---
 
-## 📂 Project Structure
-```
-order-matching-engine/
-│
-├── engine/
-│   ├── order.py
-│   ├── order_book.py
-│   ├── matching_engine.py
-│   └── trade.py
-│
-├── api.py
-├── main.py
-├── requirements.txt
-├── README.md
-│
-├── data/
-│   └── orders.csv
-│
-├── screenshots/
-│   ├── POST.png
-│   └── GET.png
-│
-└── results/
-    └── trades.csv
-```
+### **Model Building (System Logic)**
 
+- **Order Matching Engine:**
+  - Implemented price-time priority logic  
+  - Matching condition: Buy Price ≥ Sell Price  
+
+- **Execution Engine:**
+  - Supports partial order fills  
+  - Calculates trade quantity dynamically  
+  - Updates remaining orders back into heap  
+
+- **Concurrency Handling:**
+  - Used threading locks for safe parallel execution  
+
+- **API Layer:**
+  - Built REST endpoints for order submission and trade retrieval  
 
 ---
 
-## ▶️ Setup Instructions
+### **Evaluation**
 
-### 1. Clone Repository
+- Verified correctness of matching logic under multiple scenarios  
+- Tested system with bulk orders and concurrent requests  
+- Measured efficiency using heap-based operations (O(log n))  
+- Ensured thread safety by preventing race conditions  
+
+---
+
+## **Results**
+
+- Successfully implemented a real-time order matching engine  
+- Achieved efficient order processing using heap-based structures  
+- Ensured accurate trade execution with support for partial fills  
+- Enabled concurrent order handling using thread-safe mechanisms  
+- Built a functional API for real-time trading simulation  
+
+---
+
+## **Output**
+
+- Real-time order matching and trade execution  
+- Trade history retrieval via API  
+- CSV-based trade logs for analysis  
+- Multi-stock trading simulation  
+- REST API endpoints for interaction  
+
+---
+
+## **How to Run**
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/order-matching-engine.git
 cd order-matching-engine
-## ⚙️ Setup Instructions
 
-### 2. Create Virtual Environment
-```bash
 python -m venv .venv
 source .venv/bin/activate   # Mac/Linux
 .venv\Scripts\activate      # Windows
-```
 
-### 3. Install Dependencies
-```bash
 pip install -r requirements.txt
-```
-
-## 🚀 Running the Project
-
-### ▶️ Run Matching Engine (CLI)
-```bash
 python main.py
 ```
+## **Key Learning**
 
-### Run REST API
-```bash
-python api.py
-```
-
-## 🌐 REST API
-
-### 📌 Add Order
-
-**Endpoint:**
-```
-POST /order
-```
-
-**Request Body:**
-```json
-{
-  "stock": "AAPL",
-  "side": "BUY",
-  "price": 150,
-  "quantity": 10
-}
-```
-
-**Description:**
-Adds a new order and triggers matching.
-
----
-
-### 📌 Get Trades
-
-**Endpoint:**
-```
-GET /trades
-```
-
-**Description:**
-Returns all executed trades.
-
-**Sample Response:**
-```json
-[
-  {
-    "stock": "AAPL",
-    "price": 150,
-    "quantity": 10,
-    "timestamp": "2026-03-18T12:00:00"
-  }
-]
-```
-
-## 📸 Screenshots
-
-### ➤ Add Order API
-
-![Add Order](screenshots/POST.png)
-
-### ➤ Trades Output
-
-![Trades](screenshots/GET.png)
-
-## 📊 Performance Considerations
-- Heap operations ensure **O(log n)** complexity  
-- Thread locks prevent **race conditions**  
-- Efficient matching reduces latency (**HFT-style design**)  
-
----
-
-## 🔮 Future Enhancements
-- WebSocket support for real-time updates  
-- Order cancellation and modification  
-- Market orders & stop-loss orders  
-- Redis/Kafka integration for scalability  
-- Cloud deployment (AWS/GCP)  
-- Latency benchmarking dashboard  
-
----
-
-## 🧪 Example Workflow
-1. Start API server  
-2. Send BUY order *(price = 150)*  
-3. Send SELL order *(price = 140)*  
-4. Orders match instantly  
-5. Trade stored and retrieved via `/trades`  
-
----
-
-## 💼 Why This Project Matters
-This project demonstrates:
-- Market microstructure understanding  
-- Low-latency system design  
-- Strong DSA fundamentals  
-- Concurrent programming skills  
-- Real-world financial system simulation  
+- Built a real-time order matching engine using price-time priority logic  
+- Gained strong understanding of market microstructure and trading systems 
+- Implemented heap-based data structures for efficient O(log n) operations  
+- Learned concurrent programming using threading and locks  
+- Designed REST APIs for real-time system interaction  
+- Handled bulk data processing using Pandas  
+- Developed scalable and low-latency system architecture  
+- Strengthened problem-solving skills in data structures and system design  
+- Simulated real-world financial systems with practical implementation  
